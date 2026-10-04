@@ -75,7 +75,7 @@
 
         <div class="field-group">
           <label class="field-label" for="teachingTopic">教學主題 <span aria-hidden="true">*</span></label>
-          <p class="field-hint">請盡量具體、生活化，而且符合實際教學可以應用的主題。</p>
+          <p class="field-hint">請盡量具體、生活化，例如「在便利商店主動表達想購買的商品」。</p>
           <input id="teachingTopic" name="teachingTopic" type="text" maxlength="150" placeholder="請輸入教學主題" required />
           <p class="field-error" id="topicError" aria-live="polite"></p>
         </div>
