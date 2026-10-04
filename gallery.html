@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f1e8" />
+  <title>全班教學設計共學牆</title>
+  <link rel="stylesheet" href="styles.css?v=20261004-1" />
+</head>
+<body>
+  <main class="page-shell gallery-shell">
+    <section class="hero card gallery-hero">
+      <div class="eyebrow">匿名共學牆</div>
+      <h1>全班教學設計共學牆</h1>
+      <p class="lead">看看大家如何排列六項能力，以及不同能力下可以發展出哪些教學主題與設計。</p>
+      <div class="gallery-actions">
+        <a class="secondary-btn link-btn" href="index.html">回到活動頁</a>
+        <button class="secondary-btn" id="refreshBtn" type="button">重新整理</button>
+      </div>
+      <p class="refresh-note" id="lastUpdated">正在讀取最新資料……</p>
+    </section>
+
+    <section class="card section-block">
+      <div class="section-heading compact">
+        <span class="step">01</span>
+        <div>
+          <h2>全班如何排序六項能力？</h2>
+          <p id="submissionCount">尚未讀取資料</p>
+        </div>
+      </div>
+      <div id="summaryGrid" class="summary-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="card section-block">
+      <div class="section-heading compact">
+        <span class="step">02</span>
+        <div>
+          <h2>匿名教學設計想法</h2>
+          <p>點選能力篩選；只顯示教學主題與內容，不顯示姓名。</p>
+        </div>
+      </div>
+
+      <div id="filterBar" class="filter-bar" role="group" aria-label="依能力篩選"></div>
+      <div id="ideasContainer" class="ideas-container" aria-live="polite"></div>
+    </section>
+
+    <section class="card error-card hidden" id="galleryError">
+      <h2>目前無法載入共學資料</h2>
+      <p id="galleryErrorText"></p>
+    </section>
+  </main>
+
+  <script src="gallery.js?v=20261004-1"></script>
+</body>
+</html>

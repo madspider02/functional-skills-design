@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f1e8" />
+  <title>functional-skills-design｜學習功能嚴重缺損學生能力排序與教學設計</title>
+  <link rel="stylesheet" href="styles.css?v=20261004-2" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero card">
+      <div class="eyebrow">教學原理・課堂共學活動</div>
+      <h1>學習功能嚴重缺損學生<br />能力排序與教學設計</h1>
+      <p class="designer-credit">設計者：國家教育研究院黃彥融副研究員</p>
+      <p class="lead">
+        請先依你認為的教學優先程度，排列六項重要能力；接著針對你排在第一順位的能力，提出一個具體、生活化的教學主題與內容構想。
+      </p>
+      <div class="privacy-note" role="note">
+        <strong>姓名請填真實姓名。</strong> 姓名只供教師後台辨識，不會顯示在全班共學頁面。
+      </div>
+    </section>
+
+    <form id="learningForm" novalidate>
+      <section class="card section-block">
+        <div class="section-heading">
+          <span class="step">01</span>
+          <div>
+            <h2>先留下你的姓名</h2>
+            <p>這只會記錄在教師後台。</p>
+          </div>
+        </div>
+
+        <label class="field-label" for="studentName">真實姓名 <span aria-hidden="true">*</span></label>
+        <input id="studentName" name="studentName" type="text" maxlength="50" autocomplete="name" placeholder="請輸入姓名" required />
+        <p class="field-error" id="nameError" aria-live="polite"></p>
+      </section>
+
+      <section class="card section-block">
+        <div class="section-heading">
+          <span class="step">02</span>
+          <div>
+            <h2>排列六項能力的優先順序</h2>
+            <p>最上方代表你認為最優先。可拖曳卡片，也可使用卡片右側的上下按鈕。</p>
+          </div>
+        </div>
+
+        <div class="ranking-help">
+          <span>第 1 順位</span>
+          <span>最優先</span>
+        </div>
+
+        <ol id="rankingList" class="ranking-list" aria-label="六項能力排序"></ol>
+
+        <div class="ranking-help bottom-help">
+          <span>第 6 順位</span>
+          <span>相對較後</span>
+        </div>
+      </section>
+
+      <section class="card section-block design-panel" id="designPanel">
+        <div class="section-heading">
+          <span class="step">03</span>
+          <div>
+            <h2>為你的第一順位能力設計教學</h2>
+            <p>排序完成後，系統會依你目前排在第一位的能力更新下方提示。</p>
+          </div>
+        </div>
+
+        <div class="top-choice-banner">
+          <span class="small-label">目前第一順位</span>
+          <strong id="topAbilityText">溝通</strong>
+          <p id="topAbilityHint"></p>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="teachingTopic">教學主題 <span aria-hidden="true">*</span></label>
+          <p class="field-hint">請盡量具體、生活化，例如「在便利商店主動表達想購買的商品」。</p>
+          <input id="teachingTopic" name="teachingTopic" type="text" maxlength="150" placeholder="請輸入教學主題" required />
+          <p class="field-error" id="topicError" aria-live="polite"></p>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="teachingOverview">教學內容概述 <span aria-hidden="true">*</span></label>
+          <p class="field-hint">
+            請簡要說明：學生要學會什麼？會在哪一種情境中學習？你準備如何教？至少 30 字。
+          </p>
+          <textarea id="teachingOverview" name="teachingOverview" rows="8" maxlength="2000" placeholder="例如：先以真實或模擬情境示範，再讓學生透過圖卡、口語或輔助溝通工具練習表達需求……" required></textarea>
+          <div class="textarea-meta">
+            <p class="field-error" id="overviewError" aria-live="polite"></p>
+            <span id="overviewCount">0 / 2000</span>
+          </div>
+        </div>
+
+        <button id="submitBtn" class="primary-btn" type="submit">送出我的排序與教學想法</button>
+        <p class="submit-status" id="submitStatus" aria-live="polite"></p>
+      </section>
+    </form>
+
+    <section class="card success-card hidden" id="successPanel" aria-live="polite">
+      <div class="success-icon">✓</div>
+      <h2>你的想法已送出</h2>
+      <p>你將 <strong id="submittedTopAbility"></strong> 列為第一順位。現在可以看看全班如何排序，以及同學們提出了哪些匿名教學設計。</p>
+      <a class="primary-btn link-btn" href="gallery.html">查看全班教學想法</a>
+    </section>
+
+    <footer>
+      <p>本頁公開展示時不呈現學生姓名；姓名僅保留於教師後台。</p>
+    </footer>
+  </main>
+
+  <script src="app.js?v=20261004-2"></script>
+</body>
+</html>
